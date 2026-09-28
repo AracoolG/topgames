@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON_CASINO | Быстрый Доступ</title>
+    <style>
+        :root {
+            --bg-base: #0a0b10;
+            --card-bg: rgba(20, 24, 38, 0.85);
+            --neon-blue: #00f0ff;
+            --neon-purple: #b026ff;
+            --neon-green: #05ffa1;
+            --text-main: #ffffff;
+            --text-dim: #8f9cae;
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #18192b 0%, var(--bg-base) 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 1.5rem 1rem 3rem 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Хедер */
+        .top-bar {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+        }
+
+        .tagline {
+            color: var(--neon-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Баннер ТГ (Неоновое стекло) */
+        .tg-banner {
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.15), rgba(0, 240, 255, 0.15));
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.1);
+        }
+
+        .tg-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: #fff;
+        }
+
+        .tg-info p {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .tg-btn {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+
+        /* Список игр (Горизонтальный компактный ряд) */
+        .games-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .game-row {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .game-row:hover {
+            border-color: var(--neon-blue);
+            transform: translateX(4px);
+            background: rgba(30, 36, 56, 0.95);
+        }
+
+        .game-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .game-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+        }
+
+        .game-details {
+            min-width: 0;
+        }
+
+        .game-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .game-tag {
+            display: inline-block;
+            color: var(--neon-blue);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .play-btn {
+            background: #111625;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-decoration: none;
+            padding: 0.6rem 1.1rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .play-btn:hover {
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* Предупреждение и Футер */
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #556070;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="top-bar">
+        <div class="logo">NEON APPS</div>
+        <div class="tagline">⚡ Быстрый вход в дающие слоты</div>
+    </header>
+
+    <!-- Ссылка на ТГ -->
+    <div class="tg-banner">
+        <div class="tg-info">
+            <h3>CAS_x_WIN 💎</h3>
+            <p>Баги, промокоды и заносы</p>
+        </div>
+        <a href="https://t.me/cas_xx" class="tg-btn" target="_blank">В КАНАЛ</a>
+    </div>
+
+    <!-- Горизонтальный список игр -->
+    <div class="games-list">
+
+        <!-- Игра 1: MineDrop -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://bonustiime.com/wp-content/uploads/2025/09/Minedrop-slot-feature-multiplier-2-1024x576.webp" alt="MineDrop" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">MineDrop</div>
+                    <span class="game-tag">x1000 MAX • Мины</span>
+                </div>
+            </div>
+            <a href="https://r1wttde.life/?open=register&p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- Игра 2: TowerRush -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://galaxsys.co/media/2024/02/26/c0952c3af55efd06b19459ccd6e8386d2fbbef10.webp" alt="TowerRush" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">TowerRush</div>
+                    <span class="game-tag">Башни • Топ Отдача</span>
+                </div>
+            </div>
+            <a href="https://one-vv8461.com/casino/play/v_galaxsysgames:towerrush?p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- Игра 3: Aviamaster -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://static.templodeslots.es/pict/1197443/Aviamasters.png" alt="Aviamaster" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">Aviamaster</div>
+                    <span class="game-tag">Краш • Выбор игроков</span>
+                </div>
+            </div>
+            <a href="https://one-vv8461.com/casino/play/v_bgmng:aviamasters2?p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- Игра 4: Ice Fishing -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvcbUCy2NvQ8CuXuv-JJhNzgkA6TmE2SsgZVsDCQVQQ&s=10" alt="Ice Fishing" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">Ice Fishing</div>
+                    <span class="game-tag">Колесо • Бонусы</span>
+                </div>
+            </div>
+            <a href="https://one-vv8461.com/casino/play/v_evolution:1winicefishing?p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- Игра 5: Doodle Crash -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://media.licdn.com/dms/image/v2/D4D22AQGWI1wPHhq83A/feedshare-shrink_800/feedshare-shrink_800/0/1689852646578?e=2147483647&v=beta&t=usXhsgeRUuHPDUuiW4jzJ3TOQUCDjGtgjqzSeviSXMY" alt="Doodle Crash" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">Doodle Crash</div>
+                    <span class="game-tag">Аркада • Динамика</span>
+                </div>
+            </div>
+            <a href="https://one-vv8461.com/casino/play/v_barbarabang:doodlecrash?p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- Игра 6: Falling Pickaxe -->
+        <div class="game-row">
+            <div class="game-left">
+                <img src="https://images.sigma.world/Falling-Pickaxe-Pixmove-Games.png" alt="Falling Pickaxe" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">Falling Pickaxe</div>
+                    <span class="game-tag">Новинка • Золото</span>
+                </div>
+            </div>
+            <a href="https://one-vv8461.com/casino/play/v_pixmove:fallingpickaxe?p=0632" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+    </div>
+
+    <div class="info-card">
+        ⚠️ Для правильной работы алгоритмов и начисления депозитных бонусов выключайте VPN перед входом. Доступно только для лиц старше 18 лет.
+    </div>
+
+    <footer class="footer">
+        NEON APPS © 2026. Лицензионные слоты.
+    </footer>
+
+</div>
+
+</body>
+</html>
