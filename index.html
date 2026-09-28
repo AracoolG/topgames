@@ -60,7 +60,7 @@
             letter-spacing: 1.5px;
         }
 
-        /* Баннер ТГ (Неоновое стекло) */
+        /* Баннер ТГ */
         .tg-banner {
             background: linear-gradient(135deg, rgba(176, 38, 255, 0.15), rgba(0, 240, 255, 0.15));
             border: 1px solid rgba(0, 240, 255, 0.3);
@@ -105,11 +105,11 @@
             100% { transform: scale(1); }
         }
 
-        /* Список игр (Горизонтальный компактный ряд) */
+        /* Список игр */
         .games-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 2rem;
         }
 
@@ -117,7 +117,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-glass);
             border-radius: 14px;
-            padding: 0.9rem;
+            padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -140,8 +140,8 @@
         }
 
         .game-icon {
-            width: 58px;
-            height: 58px;
+            width: 62px;
+            height: 62px;
             border-radius: 12px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -164,9 +164,15 @@
         .game-tag {
             display: inline-block;
             color: var(--neon-blue);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            margin-top: 2px;
+            margin-bottom: 3px;
+        }
+
+        .game-desc {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.3;
         }
 
         .play-btn {
@@ -174,7 +180,7 @@
             border: 1px solid var(--neon-blue);
             color: var(--neon-blue);
             text-decoration: none;
-            padding: 0.6rem 1.1rem;
+            padding: 0.65rem 1.1rem;
             border-radius: 10px;
             font-size: 0.8rem;
             font-weight: 800;
@@ -208,6 +214,12 @@
             font-size: 0.75rem;
             color: #556070;
         }
+
+        @media (max-width: 480px) {
+            .game-row { padding: 0.85rem; }
+            .game-icon { width: 52px; height: 52px; }
+            .play-btn { padding: 0.55rem 0.85rem; font-size: 0.75rem; }
+        }
     </style>
 </head>
 <body>
@@ -238,6 +250,7 @@
                 <div class="game-details">
                     <div class="game-title">MineDrop</div>
                     <span class="game-tag">x1000 MAX • Мины</span>
+                    <p class="game-desc">Ищи кристаллы в шахте и обходи ловушки с множителем до x1000.</p>
                 </div>
             </div>
             <a href="https://r1wttde.life/?open=register&p=0632" class="play-btn" target="_blank">Играть</a>
@@ -250,6 +263,7 @@
                 <div class="game-details">
                     <div class="game-title">TowerRush</div>
                     <span class="game-tag">Башни • Топ Отдача</span>
+                    <p class="game-desc">Строй этажи башни и фиксируй профит на безопасных множителях.</p>
                 </div>
             </div>
             <a href="https://one-vv8461.com/casino/play/v_galaxsysgames:towerrush?p=0632" class="play-btn" target="_blank">Играть</a>
@@ -262,6 +276,7 @@
                 <div class="game-details">
                     <div class="game-title">Aviamaster</div>
                     <span class="game-tag">Краш • Выбор игроков</span>
+                    <p class="game-desc">Лови дикие иксы на взлете и успевай забрать баланс до падения.</p>
                 </div>
             </div>
             <a href="https://one-vv8461.com/casino/play/v_bgmng:aviamasters2?p=0632" class="play-btn" target="_blank">Играть</a>
@@ -274,6 +289,7 @@
                 <div class="game-details">
                     <div class="game-title">Ice Fishing</div>
                     <span class="game-tag">Колесо • Бонусы</span>
+                    <p class="game-desc">Зимняя рыбалка с колесом фортуны и щедрыми секретными раундами.</p>
                 </div>
             </div>
             <a href="https://one-vv8461.com/casino/play/v_evolution:1winicefishing?p=0632" class="play-btn" target="_blank">Играть</a>
@@ -286,6 +302,7 @@
                 <div class="game-details">
                     <div class="game-title">Doodle Crash</div>
                     <span class="game-tag">Аркада • Динамика</span>
+                    <p class="game-desc">Прыгай по платформам все выше с непрерывным ростом выигрыша.</p>
                 </div>
             </div>
             <a href="https://one-vv8461.com/casino/play/v_barbarabang:doodlecrash?p=0632" class="play-btn" target="_blank">Играть</a>
@@ -298,6 +315,7 @@
                 <div class="game-details">
                     <div class="game-title">Falling Pickaxe</div>
                     <span class="game-tag">Новинка • Золото</span>
+                    <p class="game-desc">Управляй падением кирки и собирай золотые слитки в шахте.</p>
                 </div>
             </div>
             <a href="https://one-vv8461.com/casino/play/v_pixmove:fallingpickaxe?p=0632" class="play-btn" target="_blank">Играть</a>
