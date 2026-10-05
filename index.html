@@ -60,29 +60,44 @@
             letter-spacing: 1.5px;
         }
 
-        /* Баннер ТГ (Неоновое стекло) */
+        /* Баннер ТГ */
         .tg-banner {
             background: linear-gradient(135deg, rgba(176, 38, 255, 0.15), rgba(0, 240, 255, 0.15));
             border: 1px solid rgba(0, 240, 255, 0.3);
             border-radius: 16px;
-            padding: 1.2rem 1.4rem;
+            padding: 1rem 1.2rem;
             margin-bottom: 1.8rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
+            gap: 10px;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 30px rgba(0, 240, 255, 0.1);
         }
 
+        .tg-left-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tg-avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-blue);
+            background-color: #1a1a2e;
+        }
+
         .tg-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.1rem;
             color: #fff;
+            letter-spacing: 0.5px;
         }
 
         .tg-info p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-dim);
         }
 
@@ -90,10 +105,10 @@
             background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
             color: #fff;
             text-decoration: none;
-            padding: 0.8rem 1.2rem;
+            padding: 0.7rem 1rem;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             white-space: nowrap;
             box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
             animation: pulse 2s infinite;
@@ -101,15 +116,15 @@
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.04); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
-        /* Список игр (Горизонтальный компактный ряд) */
+        /* Список игр */
         .games-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 2rem;
         }
 
@@ -117,7 +132,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-glass);
             border-radius: 14px;
-            padding: 0.9rem;
+            padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -140,8 +155,8 @@
         }
 
         .game-icon {
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             border-radius: 12px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -164,9 +179,15 @@
         .game-tag {
             display: inline-block;
             color: var(--neon-blue);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            margin-top: 2px;
+            margin-bottom: 3px;
+        }
+
+        .game-desc {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.3;
         }
 
         .play-btn {
@@ -174,7 +195,7 @@
             border: 1px solid var(--neon-blue);
             color: var(--neon-blue);
             text-decoration: none;
-            padding: 0.6rem 1.1rem;
+            padding: 0.65rem 1rem;
             border-radius: 10px;
             font-size: 0.8rem;
             font-weight: 800;
@@ -208,6 +229,12 @@
             font-size: 0.75rem;
             color: #556070;
         }
+
+        @media (max-width: 480px) {
+            .game-row { padding: 0.85rem; }
+            .game-icon { width: 52px; height: 52px; }
+            .play-btn { padding: 0.55rem 0.8rem; font-size: 0.75rem; }
+        }
     </style>
 </head>
 <body>
@@ -219,88 +246,114 @@
         <div class="tagline">⚡ Быстрый вход в дающие слоты</div>
     </header>
 
-    <!-- Ссылка на ТГ -->
+    <!-- Ссылка на ТГ с новой Аватаркой -->
     <div class="tg-banner">
-        <div class="tg-info">
-            <h3>CAS_x_WIN 💎</h3>
-            <p>Баги, промокоды и заносы</p>
+        <div class="tg-left-group">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=cas_one_win&backgroundColor=b026ff" alt="cas_one_win" class="tg-avatar-img">
+            <div class="tg-info">
+                <h3>@cas_one_win</h3>
+                <p>Баги, промокоды и заносы</p>
+            </div>
         </div>
-        <a href="https://t.me/cas_xx" class="tg-btn" target="_blank">В КАНАЛ</a>
+        <a href="https://t.me/cas_one_win" class="tg-btn" target="_blank">В КАНАЛ</a>
     </div>
 
     <!-- Горизонтальный список игр -->
     <div class="games-list">
 
-        <!-- Игра 1: MineDrop -->
+        <!-- 1. Главная Страница -->
         <div class="game-row">
             <div class="game-left">
-                <img src="https://bonustiime.com/wp-content/uploads/2025/09/Minedrop-slot-feature-multiplier-2-1024x576.webp" alt="MineDrop" class="game-icon">
+                <!-- Неоновая картинка казино с Unsplash -->
+                <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=150&q=80" alt="Главная" class="game-icon">
                 <div class="game-details">
-                    <div class="game-title">MineDrop</div>
-                    <span class="game-tag">x1000 MAX • Мины</span>
+                    <div class="game-title">Главная 1WIN</div>
+                    <span class="game-tag">Официальный сайт</span>
+                    <p class="game-desc">Прямое зеркало для регистрации. Забирай бонус на депозит.</p>
                 </div>
             </div>
-            <a href="https://r1wttde.life/?open=register&p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://r1wbczc.life/?p=maka" class="play-btn" target="_blank">ВХОД</a>
         </div>
 
-        <!-- Игра 2: TowerRush -->
+        <!-- 2. LuckyJet -->
         <div class="game-row">
             <div class="game-left">
-                <img src="https://galaxsys.co/media/2024/02/26/c0952c3af55efd06b19459ccd6e8386d2fbbef10.webp" alt="TowerRush" class="game-icon">
+                <!-- Стилизованная иконка-заглушка -->
+                <img src="https://ui-avatars.com/api/?name=LJ&background=00f0ff&color=000&size=150&font-size=0.4&bold=true" alt="LuckyJet" class="game-icon">
                 <div class="game-details">
-                    <div class="game-title">TowerRush</div>
-                    <span class="game-tag">Башни • Топ Отдача</span>
+                    <div class="game-title">LuckyJet</div>
+                    <span class="game-tag">Топ Краш • x100 MAX</span>
+                    <p class="game-desc">Улетай с максимальным иксом. Самая популярная игра.</p>
                 </div>
             </div>
-            <a href="https://one-vv8461.com/casino/play/v_galaxsysgames:towerrush?p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://one-vv0702.com/casino/play/v_1wgames:luckyjet" class="play-btn" target="_blank">Играть</a>
         </div>
 
-        <!-- Игра 3: Aviamaster -->
+        <!-- 3. Plinko -->
+        <div class="game-row">
+            <div class="game-left">
+                <!-- Стилизованная иконка-заглушка -->
+                <img src="https://ui-avatars.com/api/?name=PL&background=b026ff&color=fff&size=150&font-size=0.4&bold=true" alt="Plinko" class="game-icon">
+                <div class="game-details">
+                    <div class="game-title">Plinko</div>
+                    <span class="game-tag">Математика • Шары</span>
+                    <p class="game-desc">Бросай шары и лутай множители на нижних линиях.</p>
+                </div>
+            </div>
+            <a href="https://one-vv0702.com/casino/play/v_1wgames:plinko_l?p=maka" class="play-btn" target="_blank">Играть</a>
+        </div>
+
+        <!-- 4. Aviamaster -->
         <div class="game-row">
             <div class="game-left">
                 <img src="https://static.templodeslots.es/pict/1197443/Aviamasters.png" alt="Aviamaster" class="game-icon">
                 <div class="game-details">
                     <div class="game-title">Aviamaster</div>
-                    <span class="game-tag">Краш • Выбор игроков</span>
+                    <span class="game-tag">Краш • Самолеты</span>
+                    <p class="game-desc">Лови дикие иксы на взлете и забирай баланс до падения.</p>
                 </div>
             </div>
-            <a href="https://one-vv8461.com/casino/play/v_bgmng:aviamasters2?p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://one-vv0702.com/casino/play/v_bgmng:aviamasters?p=maka" class="play-btn" target="_blank">Играть</a>
         </div>
 
-        <!-- Игра 4: Ice Fishing -->
+        <!-- 5. BlackJack -->
         <div class="game-row">
             <div class="game-left">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvcbUCy2NvQ8CuXuv-JJhNzgkA6TmE2SsgZVsDCQVQQ&s=10" alt="Ice Fishing" class="game-icon">
+                <!-- Стилизованная иконка-заглушка -->
+                <img src="https://ui-avatars.com/api/?name=BJ&background=05ffa1&color=000&size=150&font-size=0.4&bold=true" alt="BlackJack" class="game-icon">
                 <div class="game-details">
-                    <div class="game-title">Ice Fishing</div>
-                    <span class="game-tag">Колесо • Бонусы</span>
+                    <div class="game-title">BlackJack</div>
+                    <span class="game-tag">Карты • Классика</span>
+                    <p class="game-desc">Обыграй дилера на математике. Никакого рандома.</p>
                 </div>
             </div>
-            <a href="https://one-vv8461.com/casino/play/v_evolution:1winicefishing?p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://one-vv0702.com/casino/play/v_1wgames:blackjack?p=maka" class="play-btn" target="_blank">Играть</a>
         </div>
 
-        <!-- Игра 5: Doodle Crash -->
+        <!-- 6. Doodle Crash -->
         <div class="game-row">
             <div class="game-left">
                 <img src="https://media.licdn.com/dms/image/v2/D4D22AQGWI1wPHhq83A/feedshare-shrink_800/feedshare-shrink_800/0/1689852646578?e=2147483647&v=beta&t=usXhsgeRUuHPDUuiW4jzJ3TOQUCDjGtgjqzSeviSXMY" alt="Doodle Crash" class="game-icon">
                 <div class="game-details">
                     <div class="game-title">Doodle Crash</div>
                     <span class="game-tag">Аркада • Динамика</span>
+                    <p class="game-desc">Прыгай по платформам с непрерывным ростом выигрыша.</p>
                 </div>
             </div>
-            <a href="https://one-vv8461.com/casino/play/v_barbarabang:doodlecrash?p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://one-vv0702.com/casino/play/v_barbarabang:doodlecrash?p=maka" class="play-btn" target="_blank">Играть</a>
         </div>
 
-        <!-- Игра 6: Falling Pickaxe -->
+        <!-- 7. Falling Pickaxe -->
         <div class="game-row">
             <div class="game-left">
                 <img src="https://images.sigma.world/Falling-Pickaxe-Pixmove-Games.png" alt="Falling Pickaxe" class="game-icon">
                 <div class="game-details">
                     <div class="game-title">Falling Pickaxe</div>
                     <span class="game-tag">Новинка • Золото</span>
+                    <p class="game-desc">Управляй падением кирки и собирай слитки в шахте.</p>
                 </div>
             </div>
-            <a href="https://one-vv8461.com/casino/play/v_pixmove:fallingpickaxe?p=0632" class="play-btn" target="_blank">Играть</a>
+            <a href="https://one-vv0702.com/casino/play/v_pixmove:fallingpickaxe?p=maka" class="play-btn" target="_blank">Играть</a>
         </div>
 
     </div>
